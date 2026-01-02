@@ -17,13 +17,13 @@
 
 ```mermaid
 graph TB
-  Incident["Incidente (apag¢n, falla HW, error humano, ransomware)"] --> Downtime["Ca¡da del servicio"]
+  Incident["Incidente (apagon, falla HW, error humano, ransomware)"] --> Downtime["Ca¡da del servicio"]
   Downtime --> Decision["Objetivos del negocio"]
-  Decision --> RTO["RTO\nTiempo m ximo para recuperar"]
-  Decision --> RPO["RPO\nP‚rdida m xima de datos (en tiempo)"]
+  Decision --> RTO["RTO\nTiempo maximo para recuperar"]
+  Decision --> RPO["RPO\nPerdida m xima de datos (en tiempo)"]
 
   RTO --> InfraA["Infraestructura para disponibilidad\n(HA, redundancia, UPS, enlaces)"]
-  RPO --> InfraB["Infraestructura para protecci¢n de datos\n(backups, snapshots, replicaci¢n, WORM, offsite)"]
+  RPO --> InfraB["Infraestructura para proteccion de datos\n(backups, snapshots, replicaci¢n, WORM, offsite)"]
 
   InfraA --> Outcome["Servicio vuelve dentro del RTO"]
   InfraB --> Outcome2["Datos se restauran dentro del RPO"]
