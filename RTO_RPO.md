@@ -17,13 +17,13 @@
 
 ```mermaid
 graph TB
-  Incident["Incidente (apagón, falla HW, error humano, ransomware)"] --> Downtime["Caída del servicio"]
+  Incident["Incidente (apag¢n, falla HW, error humano, ransomware)"] --> Downtime["Ca¡da del servicio"]
   Downtime --> Decision["Objetivos del negocio"]
-  Decision --> RTO["RTO\nTiempo máximo para recuperar"]
-  Decision --> RPO["RPO\nPérdida máxima de datos (en tiempo)"]
+  Decision --> RTO["RTO\nTiempo m ximo para recuperar"]
+  Decision --> RPO["RPO\nP‚rdida m xima de datos (en tiempo)"]
 
   RTO --> InfraA["Infraestructura para disponibilidad\n(HA, redundancia, UPS, enlaces)"]
-  RPO --> InfraB["Infraestructura para protección de datos\n(backups, snapshots, replicación, WORM, offsite)"]
+  RPO --> InfraB["Infraestructura para protecci¢n de datos\n(backups, snapshots, replicaci¢n, WORM, offsite)"]
 
   InfraA --> Outcome["Servicio vuelve dentro del RTO"]
   InfraB --> Outcome2["Datos se restauran dentro del RPO"]
@@ -35,12 +35,13 @@ graph TB
 
 ```mermaid
 timeline
-  title Evento de falla y recuperación
-  00:00 : Incidente / caída
-  00:05 : Detección y alerta (monitoreo)
-  00:15 : Conmutación / arranque de contingencia
-  00:30 : Servicio operativo (RTO cumplido)
-  00:45 : Restauración de datos (RPO definido por backups/replicación)
+  title Fallas y recuperacion (ejemplo)
+  section Evento
+    T00 : Incidente / caida
+    T05 : Deteccion y alerta
+    T15 : Conmutacion / contingencia
+    T30 : Servicio operativo (RTO)
+    T45 : Restauracion de datos (RPO)
 ```
 
 > **Interpretación:**  
@@ -88,9 +89,13 @@ timeline
 1) ¿Cuánto tiempo máximo puede estar caído el call center sin afectar operación? (RTO)  
 2) ¿Cuántos minutos de datos de tickets/grabaciones serían “aceptables” perder? (RPO)  
 3) ¿El gobierno exige SLA o auditoría específica?  
-4) ¿Se requiere segunda sede (DR) o basta offsite en cloud?
-
+4) ¿Se requiere segunda sede (DR ) o basta offsite en cloud?
+[ver documentacion de DR](DR_Disaster_Recovery.md)
 ---
 
 **Resultado:** Con RTO/RPO definidos, se dimensiona con precisión la inversión en: energía, red, cluster, storage y backups.
+
+
+
+
 
